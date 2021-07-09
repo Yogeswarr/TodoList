@@ -1,0 +1,12 @@
+*{
+    margin: 10px;
+
+}
+.item{
+    max-width: 300px;
+    border: 2px solid #818181;
+    border-radius: 10px;
+}
+.strike{
+    text-decoration: line-through;
+}

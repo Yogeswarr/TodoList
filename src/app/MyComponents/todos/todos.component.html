@@ -1,0 +1,18 @@
+<h2 class="text-center mt-3 mb-3">WELECOME TO TODO LISTS</h2>
+  <div class="container" style="padding-left: 200px; padding-right: 200px;">
+<app-add-todo (todoAdd)="addTodo($event)"></app-add-todo>
+<h3 class="text-center">Your Todos</h3>
+<br />
+<div *ngIf="this.todos.length === 0; else elseBlock">
+  <h5 class="mx-2">No Todos to display !!!</h5>
+</div>
+<ng-template #elseBlock>
+  <div *ngFor="let todo of todos">
+    <app-todo-item
+      [todo]="todo"
+      (todoDelete)="deleteTodo($event)"
+      (todoCheckBox) = "toggleTodo($event)" 
+    ></app-todo-item>
+  </div>
+</ng-template>
+</div>
